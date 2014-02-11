@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-TEMPLATE_DIRS = ('/home/wb/pro_django/sqlite-blog/netmag/netmag/templates',)
-STATICFILES_DIRS = ('/home/wb/pro_django/sqlite-blog/netmag/netmag/static',)
+TEMPLATE_DIRS = ('/home/wb/pro_django/blog/netmag/netmag/templates',)
+STATICFILES_DIRS = ('/home/wb/pro_django/blog/netmag/netmag/static',)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -64,7 +64,7 @@ WSGI_APPLICATION = 'netmag.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE':'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'netmag',
         'USER': 'postgres',
         'PASSWORD': 'password',
