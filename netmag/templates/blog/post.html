@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% block title %}{{post.title}}{% endblock %}
 
 {% block content %}
@@ -18,4 +17,6 @@
     </p>
     {{post.content|safe}}
 </article>
+    {% load disqus_tags %}
+    {% disqus_show_comments %}
 {% endblock %}

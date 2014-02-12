@@ -37,14 +37,16 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Uncomment the next line to enable admin documentation:
-    'django.contrib.admindocs',
+    #'django.contrib.admindocs',
     'blog',
-    'django.contrib.sites',
-    'fluent_comments',
-    'crispy_forms',
-    'django.contrib.comments',
+    #'django.contrib.sites',
+    #'django.contrib.comments',
+    'disqus',
 )
+
+SITE_ID = 1
+DISQUS_API_KEY = 'zXXqH8ffRpqXfDstm8NxFnplBT6KDsIt06uUfJLnggeP6kv1IIRtc4Uqev5Y1ZhO'
+DISQUS_WEBSITE_SHORTNAME = 'xeonblog'
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',

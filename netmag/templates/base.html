@@ -10,6 +10,8 @@
     <body>
         <div class="content">
             {% block content %}
+                {% load disqus_tags %}
+                {% disqus_dev %}
             {% endblock %}
         </div>
     </body>
