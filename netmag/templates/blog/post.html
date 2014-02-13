@@ -3,20 +3,23 @@
 
 {% block content %}
 <article>
-    <header>
-        <h1> {{post.title}} </h1>
+    <div class="blog-header">
+        <h1 class="blog-post-title">
+            {{post.title}}
+        </h1>
         <p>
             Posted on
             <time datetime="{{post.created|date:"c"}}">
             {{post.created|date}}
             </time>
         </p>
-    </header>
+    </div>
     <p class="description">
         {{post.description}}
     </p>
     {{post.content|safe}}
 </article>
+    <hr>
     {% load disqus_tags %}
     {% disqus_show_comments %}
 {% endblock %}

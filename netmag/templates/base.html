@@ -2,17 +2,51 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}style.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap -->
+        <link href="{{STATIC_URL}}css/bootstrap.min.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link type="text/css" href="{{STATIC_URL}}style.css" rel="stylesheet">
+
         <title>
             {% block title %}{% endblock %}
         </title>
     </head>
+
     <body>
-        <div class="content">
-            {% block content %}
-                {% load disqus_tags %}
-                {% disqus_dev %}
-            {% endblock %}
+
+        <div class="blog-masthead">
+            <div class="container">
+                <nav class="blog-nav">
+                    <a class="blog-nav-item active" href="/">Home</a>
+                    <a class="blog-nav-item" href="#">News</a>
+                    <a class="blog-nav-item" href="#">Other blogs</a>
+                    <a class="blog-nav-item" href="#">Contact</a>
+                    <a class="blog-nav-item" href="#">About</a>
+                </nav>
+            </div>
         </div>
+
+        <div class="container">
+            <div class="content">
+                {% block content %}
+                    {% load disqus_tags %}
+                    {% disqus_dev %}
+                {% endblock %}
+            </div>
+        </div><!-- /.container -->
+
+        <div class="blog-footer">
+            <p>Blog sample built for <a href="http://xeontek.com">Xeontek</a> by <a href="">wooojtek</a>.</p>
+            <p>
+                <a href="#">Back to top</a>
+            </p>
+        </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
     </body>
-</html> 
+</html>
