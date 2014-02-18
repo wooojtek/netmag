@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.urlresolvers import reverse
+import django_filters
 
 
 class Post(models.Model):
@@ -30,3 +31,14 @@ class Category(models.Model):
 
     def __unicode__(self):
         return u'%s' % self.category_name
+
+
+class PostFilter(django_filters.FilterSet):
+    class Meta:
+        model = Post
+        fields = ['categories']
+
+    # def __init__(self, *args, **kwargs):
+    #     super(PostFilter, self).__init__(*args, **kwargs)
+    #     self.filters['categories'].extra.update(
+    #         {'empty_label': 'All Categories'})
