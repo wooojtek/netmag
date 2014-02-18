@@ -3,6 +3,7 @@
 {% block title %} Blog Archive {% endblock %}
 
 {% block content %}
+    {{ block.super }}
      <div class="blog-header">
         <h1 class="blog-title"> My Blog Archive </h1>
         <p class="lead blog-description">The example of a blog.</p>
@@ -35,7 +36,6 @@
             <div class="sidebar-module">
                 <h4>Categories</h4>
                 {% block cat_filter %}
-                    {{ block.super }}
                 {% endblock %}
             </div>
             <div class="sidebar-module sidebar-module-inset">

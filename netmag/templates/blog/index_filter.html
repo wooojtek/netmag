@@ -4,12 +4,11 @@
 
 {% block cat_filter %}
     {{ block.super }}
-    <p>chuje muje dzikie weze</p>
     <form action="" method="get">
         {{ filter.form.as_p }}
         <input type="submit" />
     </form>
     {% for obj in filter %}
-        {{ obj.title }}<br />
+        {{ obj.title }} - ${{ obj.categories }}<br />
     {% endfor %}
 {% endblock %}
