@@ -43,7 +43,6 @@ INSTALLED_APPS = (
     #'django.contrib.sites',
     #'django.contrib.comments',
     'disqus',
-    'autoslug',
 )
 
 SITE_ID = 1
