@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.urlresolvers import reverse
-import django_filters
+#import django_filters
 
 
 class Post(models.Model):
@@ -10,7 +10,7 @@ class Post(models.Model):
     content = models.TextField()
     published = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
-    categories = models.ManyToManyField('Category', related_name='posts')
+    category = models.ManyToManyField('Category', related_name='posts')
  
     class Meta:
         ordering = ['-created']
@@ -23,20 +23,24 @@ class Post(models.Model):
 
 
 class Category(models.Model):
-    category_name = models.CharField(max_length=255)
+    title = models.CharField(max_length=255)
+    slug = models.SlugField(unique=True, max_length=255)
     #posts = models.ManyToManyField(Post, related_name='categories')
 
     class Meta:
         verbose_name_plural = 'categories'
 
     def __unicode__(self):
-        return u'%s' % self.category_name
+        return u'%s' % self.title
+
+    def get_absolute_url(self):
+        return reverse('blog.views.category', args=[self.slug])
 
 
-class PostFilter(django_filters.FilterSet):
-    class Meta:
-        model = Post
-        fields = ['categories']
+# class PostFilter(django_filters.FilterSet):
+#     class Meta:
+#         model = Post
+#         fields = ['categories']
 
     # def __init__(self, *args, **kwargs):
     #     super(PostFilter, self).__init__(*args, **kwargs)
