@@ -1,10 +1,12 @@
 from django.db import models
 from django.core.urlresolvers import reverse
+from autoslug import AutoSlugField
 
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
-    slug = models.SlugField(unique=True, max_length=255)
+    slug = AutoSlugField(populate_from='title', unique=True,
+                         always_update=True, editable=True)
     description = models.CharField(max_length=255)
     content = models.TextField()
     published = models.BooleanField(default=True)
@@ -23,7 +25,8 @@ class Post(models.Model):
 
 class Category(models.Model):
     title = models.CharField(max_length=255)
-    slug = models.SlugField(unique=True, max_length=255)
+    slug = AutoSlugField(populate_from='title', unique=True,
+                         always_update=True, editable=True)
 
     class Meta:
         verbose_name_plural = 'categories'
