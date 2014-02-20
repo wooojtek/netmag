@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.urlresolvers import reverse
+from django import forms
 from autoslug import AutoSlugField
 
 
@@ -36,3 +37,10 @@ class Category(models.Model):
 
     def get_absolute_url(self):
         return reverse('blog.views.category', args=[self.slug])
+
+
+class ContactForm(forms.Form):
+    subject = forms.CharField(max_length=100)
+    message = forms.CharField()
+    sender = forms.EmailField()
+    cc_myself = forms.BooleanField(required=False)
