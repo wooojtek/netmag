@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Contact us | Form{% endblock %}
+
+{% block content %}
+    <div class="well col-md-6">
+        <p>Please write your message.</p>
+
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Send</button>
+        </form>
+    </div>
+{% endblock %}

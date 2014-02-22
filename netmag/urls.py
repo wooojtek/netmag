@@ -15,5 +15,7 @@ urlpatterns = patterns('',
                            r'^blog/category/(?P<slug>[^\.]+).html',
                            'blog.views.category',
                            name='view_blog_category'),
-                       url(r'^contact/$', 'blog.views.contact'),
+                       url(r'^contact/$', 'contact.views.contact'),
+                       url(r'^thanks/$', 'contact.views.contact'),
+
 )

@@ -12,8 +12,10 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-TEMPLATE_DIRS = ('/home/wb/pro_django/blog/netmag/netmag/templates',)
-STATICFILES_DIRS = ('/home/wb/pro_django/blog/netmag/netmag/static',)
+# TEMPLATE_DIRS = ('/home/wb/pro_django/blog/netmag/netmag/templates',)
+TEMPLATE_DIRS = os.path.join(BASE_DIR, 'netmag/templates')
+# STATICFILES_DIRS = ('/home/wb/pro_django/blog/netmag/netmag/static',)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'netmag/static'),)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -38,11 +40,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'django.contrib.admindocs',
+    'django.contrib.admindocs',
     'blog',
-    #'django.contrib.sites',
-    #'django.contrib.comments',
     'disqus',
+    'contact',
 )
 
 SITE_ID = 1
