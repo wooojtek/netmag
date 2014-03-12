@@ -4,8 +4,6 @@
 
 {% block content %}
     <div class="well col-md-6">
-        <p>Please write your message.</p>
-
         <form action="" method="post">
             {% csrf_token %}
             {{ form|crispy }}

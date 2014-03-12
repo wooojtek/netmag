@@ -7,15 +7,9 @@ urlpatterns = patterns('',
                        url(r'^admin/', include(admin.site.urls)),
                        url(r'^$', 'blog.views.index'),
                        # url(r'^(?P<slug>[\w\-]+)/$', 'blog.views.post'),
-                       url(
-                           r'^blog/view/(?P<slug>[^\.]+).html',
-                           'blog.views.post',
-                           name='view_blog_post'),
-                       url(
-                           r'^blog/category/(?P<slug>[^\.]+).html',
-                           'blog.views.category',
-                           name='view_blog_category'),
+                       url(r'^post/(?P<slug>[\w\-]+)/$', 'blog.views.post'),
+                       url(r'^category/(?P<slug>[\w\-]+)/$', 'blog.views.category'),
                        url(r'^contact/$', 'contact.views.contact'),
-                       url(r'^thanks/$', 'contact.views.contact'),
+                       url(r'^thanks/$', 'contact.views.thanks'),
 
 )

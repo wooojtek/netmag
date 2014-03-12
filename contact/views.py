@@ -8,10 +8,14 @@ def contact(request):
         form = ContactForm(request.POST)  # A form bound to the POST data
         if form.is_valid():  # All validation rules pass
             form.save()
-            return redirect('/contact/')  # Redirect after POST
+            return redirect('/thanks/')  # Redirect after POST
     else:
         form = ContactForm()  # An unbound form
 
     return render(request, 'contact/contact.html', {
         'form': form,
     })
+
+
+def thanks(request):
+    return render(request, 'contact/thanks.html')

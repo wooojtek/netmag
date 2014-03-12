@@ -43,11 +43,17 @@ INSTALLED_APPS = (
     'disqus',
     'contact',
     'crispy_forms',
+    # 'django_facebook',
 )
 
+# Disqus settings
 SITE_ID = 1
 DISQUS_API_KEY = 'zXXqH8ffRpqXfDstm8NxFnplBT6KDsIt06uUfJLnggeP6kv1IIRtc4Uqev5Y1ZhO'
 DISQUS_WEBSITE_SHORTNAME = 'xeonblog'
+
+# # Facebook settings
+# FACEBOOK_APP_ID = '1400235496907896'
+# FACEBOOK_APP_SECRET = '5a571426d809122864fad16ded8ad94f'
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
